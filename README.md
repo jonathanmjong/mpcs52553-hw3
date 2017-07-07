@@ -31,11 +31,10 @@ As a site visitor, I want to:
 
 Here is a very, very big hint:
 
-* All of the code required for this assignment will go somewhere in the ProductsController.
+* All of the code required for this assignment will go somewhere in the ProductsController and in the routes.rb file.
 
 More hints:
 
-* You do not need to touch any code in `routes.rb` or any `.html.erb` files.
 * Need to reset your product catalog? Run `rails db:seed` to repopulate your database!
 * Read the code in `db/seeds.rb` file to see how the `rails db:seed` command works.
 * Starting with the README file, read all of the notes in the [Week3 repository](https://github.com/ucwebdev/week3) from class.  
