@@ -1,17 +1,17 @@
 class ProductsController < ApplicationController
 
-  # /products
+  # GET /products
   def index
     @products = Product.all
   end
-  # /products/:id
+  # GET /products/:id
   def show
     @product = Product.find_by(id: params["id"])
   end
-  # /products/:id/new
+  # GET form /products/:id/new
   def new
   end
-  # /products/new to show form, then /products as POST
+  # GET create form /products/new, then /products as POST
   def create
     p = Product.new
     p.title = params["title"]
@@ -21,9 +21,26 @@ class ProductsController < ApplicationController
 
     redirect_to "/products"
   end
-  # /products/:id/edit
+  # GET edit form /products/:id/edit
   def edit
     @product = Product.find_by(id: params["id"])
+  end
+  # PATCH /products/:id
+  def update
+    p = Product.find_by(id: params["id"])
+    p.title = params["title"]
+    p.price = params["price"]
+    p.description = params["description"]
+    p.save
+
+    redirect_to "/products"
+  end
+  # DELETE /products/:id
+  def destroy
+    p = Product.find_by(id: params["id"])
+    p.delete
+
+    redirect_to "/products"
   end
 
 end
