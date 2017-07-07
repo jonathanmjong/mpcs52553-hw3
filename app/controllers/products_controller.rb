@@ -8,10 +8,10 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find_by(id: params["id"])
   end
-  # GET form /products/:id/new
+  # GET form /products/new
   def new
   end
-  # GET create form /products/new, then /products as POST
+  # POST /products
   def create
     p = Product.new
     p.title = params["title"]
