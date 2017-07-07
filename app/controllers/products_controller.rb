@@ -4,14 +4,14 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
   end
-
+  # /products/:id
   def show
     @product = Product.find_by(id: params["id"])
   end
-
+  # /products/:id/new
   def new
   end
-
+  # /products/new to show form, then /products as POST
   def create
     p = Product.new
     p.title = params["title"]
@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
 
     redirect_to "/products"
   end
-
+  # /products/:id/edit
   def edit
     @product = Product.find_by(id: params["id"])
   end
